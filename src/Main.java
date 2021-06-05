@@ -16,15 +16,13 @@ public class Main extends PApplet{
 		 
 	}
 	
-	Polo p1;
-	Marco m1;
-	
+	Logic logic;
 	
 	@Override
 	public void setup() {
 	
-	m1 = new Marco();
-	p1 = new Polo();
+	logic = new Logic();
+	
 	textSize(40);
 	textAlign(CENTER);
 		  
@@ -33,8 +31,8 @@ public class Main extends PApplet{
 @Override
 public void draw() {
 	background(255);
-	p1.drawPolo(this,m1.getPosX(),m1.getPosY());
-	m1.drawMarco(this);
+	logic.draw(this);
+	
 	  
      
      
