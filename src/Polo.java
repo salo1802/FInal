@@ -42,6 +42,11 @@ public void drawPolo(PApplet app,int cX,int cY) {
 public void move() {
 	//movimiento
 	
+		if(posY<50) {up=false;}
+		if(posY>650) {up=true;}
+		if(posY<50) {right=true;}
+		if(posX>950) {right=false;}
+	
 		if(posY>50) {if(up==true) {posY--;}}
 		if(posY<650) {if(up==false) {posY++;}}
 		if(posX<950) {if(right==true) {posX++;}}

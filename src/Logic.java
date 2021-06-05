@@ -29,7 +29,7 @@ public class Logic {
 		
 		for(int i=0; i<polos.size();i++) {
 			new Thread(polos.get(i)).start();
-			for(int j=0;j<marcos.size();j++)
+			for(int j=0;j<marcos.size();j++) {
 			polos.get(i).drawPolo(app, marcos.get(j).getPosX(), marcos.get(j).getPosY());
 			if(polos.get(i).getDist()<95) {
 				Polo actual = polos.get(i);
@@ -37,15 +37,15 @@ public class Logic {
 				newM.setPosX(polos.get(i).getPosX());
 				newM.setPosY(polos.get(i).getPosY());
 				marcos.add(newM);
-				polos.remove(actual);
+				polos.remove(actual);}
+			//pregunta
+			//if(time%2==0) {	
+			marcos.get(j).chase( polos.get(0).getPosX(),polos.get(0).getPosY());}
+			//time=0;}
 			}
-		}
-		Collections.sort(polos, d);
 		
-		//pregunta
-		if(time%3==0) {
-			for(int i=0; i<marcos.size();i++) {
-		marcos.get(i).chase( polos.get(0).getPosX(),polos.get(0).getPosY());}}
+		if(time%3==0) {	Collections.sort(polos, d);}
+		
 	}
 
 }

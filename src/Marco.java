@@ -42,11 +42,14 @@ public class Marco extends Thread{
 	
 	public void move() {
 		//movimiento
-		
-				if(posY>45) {if(up==true) {posY-=4;}}
-				if(posY<655) {if(up==false) {posY+=4;}}
-				if(posX<955) {if(right==true) {posX+=4;}}
-				if(posX>45) {if(right==false) {posX-=4;}}
+		if(posY<45) {up=false;}
+		if(posY>655) {up=true;}
+		if(posX<45) {right=true;}
+		if(posX>955) {right=false;}
+				if(posY>45) {if(up==true) {posY-=2;}}
+				if(posY<655) {if(up==false) {posY+=2;}}
+				if(posX<955) {if(right==true) {posX+=2;}}
+				if(posX>45) {if(right==false) {posX-=2;}}
 				
 			
 	}
