@@ -22,12 +22,12 @@ public class Main extends PApplet{
 	public void setup() {
 	
 	logic = new Logic();
-	
+	frameRate=60;
 	textSize(40);
 	textAlign(CENTER);
 		  
 	}
-	
+
 @Override
 public void draw() {
 	background(255);

@@ -1,6 +1,6 @@
 import processing.core.PApplet;
 
-public class Marco {
+public class Marco extends Thread{
 
 	public int posX = 500;
 	public int posY = 350;
@@ -9,10 +9,15 @@ public class Marco {
 	private int poloX;
 	private int poloY;
 	
-	public void drawMarco(PApplet app, int pX,int pY) {
+	@Override
+	public void run() {
 		
-		poloX = pX;
-		poloY = pY;
+		move();
+	}
+	
+	public void drawMarco(PApplet app) {
+		
+		
 		
 		//draw
 		app.stroke(200,0,0);
@@ -26,20 +31,33 @@ public class Marco {
 		app.text("M", posX,posY+10);
 		app.textSize(40);
 		
+		
+	
+	
+	}
+	
+	
+	
+	public void move() {
 		//movimiento
 		
-		if(posY>45) {if(up==true) {posY-=2;}}
-		if(posY<655) {if(up==false) {posY+=2;}}
-		if(posX<955) {if(right==true) {posX+=2;}}
-		if(posX>45) {if(right==false) {posX-=2;}}
-		
+				if(posY>45) {if(up==true) {posY-=4;}}
+				if(posY<655) {if(up==false) {posY+=4;}}
+				if(posX<955) {if(right==true) {posX+=4;}}
+				if(posX>45) {if(right==false) {posX-=4;}}
+				
+			
+	}
+	
+	public void chase(int pX,int pY) {
 		//perseguir
-	if(posX-poloX>5) {right=true;}
-	if(posX-poloX<-5) {right=false;}
-		if(posY-poloY>5) {up=true;}
-		if(posY-poloY<5) {up=false;}
-	
-	
+		
+		poloX = pX;
+		poloY = pY;
+				if(posX-poloX>5) {right=true;}
+				if(posX-poloX<-5) {right=false;}
+					if(posY-poloY>5) {up=true;}
+					if(posY-poloY<5) {up=false;}
 	}
 	
 	
