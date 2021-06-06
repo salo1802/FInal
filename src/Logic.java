@@ -37,15 +37,30 @@ public class Logic {
 				newM.setPosX(polos.get(i).getPosX());
 				newM.setPosY(polos.get(i).getPosY());
 				marcos.add(newM);
-				polos.remove(actual);}
+				polos.remove(actual);}}
 			//pregunta
-			//if(time%2==0) {	
-			marcos.get(j).chase( polos.get(0).getPosX(),polos.get(0).getPosY());}
-			//time=0;}
-			}
+			
 		
-		if(time%3==0) {	Collections.sort(polos, d);}
+	
 		
 	}
-
+		
+		if(time%3==0) {	
+			for(int i=0;i<polos.size();i++ ) {
+				polos.get(i).escape();
+			}
+		}
+		
+		
+		if(time%2==0) {
+			for(int i=0; i<marcos.size();i++) {
+			app.textSize(10);
+			app.text("Marco"+ marcos.get(i).getPosX() + marcos.get(i).getPosY(), marcos.get(i).getPosX(), marcos.get(i).getPosY()+55);
+					Collections.sort(polos, d);
+					marcos.get(i).chase( polos.get(0).getPosX(),polos.get(0).getPosY());
+			for(int j=0;j<polos.size();j++) {
+			app.text("Polo"+ polos.get(j).getPosX() + polos.get(j).getPosY(), polos.get(j).getPosX(), polos.get(j).getPosY()+60);
+					}}}
+					}
+			
 }

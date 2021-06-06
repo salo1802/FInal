@@ -42,25 +42,28 @@ public void drawPolo(PApplet app,int cX,int cY) {
 public void move() {
 	//movimiento
 	
-		if(posY<50) {up=false;}
-		if(posY>650) {up=true;}
-		if(posY<50) {right=true;}
-		if(posX>950) {right=false;}
+		if(posY<51) {up=false;}
+		if(posY>649) {up=true;}
+		if(posY<51) {right=true;}
+		if(posX>949) {right=false;}
 	
 		if(posY>50) {if(up==true) {posY--;}}
 		if(posY<650) {if(up==false) {posY++;}}
 		if(posX<950) {if(right==true) {posX++;}}
 		if(posX>50) {if(right==false) {posX--;}}
 		
+
+	
+}
+	
+
+	public void escape() {
 		//escape
-		
 		if((mPosX-posX)>=0) {right=false;}
 		if((mPosX-posX)<0) {right=true;}
 		if((mPosY-posY)>=0) {up=true;}
 		if((mPosY-posY)<0) {up=false;}
-}
-	
-
+	}
  public float getDist() {
 	return dist;
 }
